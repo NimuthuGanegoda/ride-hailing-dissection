@@ -37,6 +37,13 @@ The driver client is engineered for high-frequency telemetry and absolute device
 
 ---
 
+### 🛠️ Specific App Features
+*   **Industrial Telemetry Stream:** High-frequency, continuous background location tracking for precise dispatching.
+*   **Modular Verification (BarcodeScanner):** Uses a separate, dynamically loaded APK specifically for high-speed logistical scanning.
+*   **Dashboard Projection:** Android Auto templates (`androidx.car.app`) allowing the app to project directly onto the vehicle's head unit.
+*   **Screen Capture Detection:** Security measures to prevent unauthorized recording of driver accounts or passenger details.
+*   **Remote Feature Flagging:** `DiskFeatureFlag` system for remote A/B testing and on-the-fly capability toggling.
+
 ### 🌐 Discovered API Ecosystem
 The binary explicitly references these dedicated infrastructure points:
 *   `https://auth.uber.com` - Central Identity Gateway

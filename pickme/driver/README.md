@@ -39,6 +39,13 @@ The driver client is designed for total persistence and device control to ensure
 
 ---
 
+### 🛠️ Specific App Features
+*   **Persistent Dispatch Overlay:** System-alert windows that force job requests to appear over any other app the driver is using.
+*   **Self-Registration Portal:** In-app onboarding system for new driver verification and document submission.
+*   **In-App Support Chat:** Real-time, dedicated WebSocket/MQTT communication with the central dispatch and support teams.
+*   **Strict Power Management:** Bypasses Android battery optimization to ensure the app never sleeps during a shift.
+*   **Hardware Binding:** Extensive device ID and phone state reading to bind driver accounts to specific physical phones (Anti-fraud).
+
 ### 🌐 Discovered API Ecosystem
 The binary explicitly references these dedicated driver-side services:
 *   `https://driver.pickme.lk` - Driver Management Portal

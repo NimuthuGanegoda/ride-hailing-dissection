@@ -29,6 +29,13 @@ An exhaustive architectural audit of the **Uber Passenger** application, detaili
 
 ---
 
+### 🛠️ Specific App Features
+*   **Global Payment Fabric:** Multi-gateway support including Braintree, PayPal, and Venmo, with localized currency handling.
+*   **Uber Eats Integration:** Modular UI elements (`gifting_eats_feature_launcher`) allowing seamless transition to food delivery.
+*   **Dynamic Pricing Engine:** Real-time fare recalculation based on demand density and geo-fencing (`PricingApi`).
+*   **High-Fidelity Media:** ID3 tag extraction and advanced streaming for in-app media or ad experiences.
+*   **S2S Analytics:** Server-to-server attribution tracking via Singular.net.
+
 ### 🌐 Discovered API Ecosystem
 The binary explicitly references these global service points:
 *   `https://auth.uber.com/v2` - Central Identity & Auth Gateway
