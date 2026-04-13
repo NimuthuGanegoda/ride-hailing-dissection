@@ -1,57 +1,128 @@
-<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
-  <!-- Background -->
-  <rect width="800" height="600" fill="#0a0a0c" rx="15" ry="15"/>
+<svg width="1000" height="800" viewBox="0 0 1000 800" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background with subtle grid -->
+  <rect width="1000" height="800" fill="#0a0a0c" rx="15" ry="15"/>
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1a1a20" stroke-width="1"/>
+    </pattern>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2.5" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="1000" height="800" fill="url(#grid)" rx="15" ry="15"/>
   
   <!-- Title -->
-  <text x="400" y="50" font-family="Cinzel, serif" font-size="28" fill="#6a0dad" text-anchor="middle" font-weight="bold">PickMe Ecosystem: Architectural Dissection</text>
-  <text x="400" y="80" font-family="Quicksand, sans-serif" font-size="14" fill="#888" text-anchor="middle">Mapping the Inner Workings for the Database Manager</text>
+  <text x="500" y="45" font-family="Cinzel, serif" font-size="32" fill="#6a0dad" text-anchor="middle" font-weight="bold" filter="url(#glow)">PickMe Ecosystem: High-Fidelity Dissection</text>
+  <text x="500" y="70" font-family="Quicksand, sans-serif" font-size="14" fill="#888" text-anchor="middle">Full Architectural Mapping | Database Manager: Nimuthu Ganegoda</text>
 
-  <!-- Passenger App -->
-  <rect x="50" y="150" width="220" height="120" rx="10" ry="10" fill="#16161a" stroke="#1565C0" stroke-width="2"/>
-  <text x="160" y="180" font-family="Quicksand, sans-serif" font-size="18" fill="#e0e0e0" text-anchor="middle" font-weight="bold">📱 Passenger App</text>
-  <text x="160" y="205" font-family="Quicksand, sans-serif" font-size="12" fill="#888" text-anchor="middle">com.pickme.passenger</text>
-  <line x1="100" y1="215" x2="220" y2="215" stroke="#2d2d35" stroke-width="1"/>
-  <text x="160" y="235" font-family="Quicksand, sans-serif" font-size="11" fill="#bbb" text-anchor="middle">• Real-time Booking</text>
-  <text x="160" y="250" font-family="Quicksand, sans-serif" font-size="11" fill="#bbb" text-anchor="middle">• Tracking &amp; Payment</text>
+  <!-- Legend -->
+  <g transform="translate(820, 20)">
+    <rect width="160" height="100" fill="#16161a" stroke="#2d2d35" rx="5"/>
+    <text x="10" y="20" font-family="Quicksand" font-size="12" fill="#6a0dad" font-weight="bold">LEGEND</text>
+    <circle cx="15" cy="40" r="5" fill="#1565C0"/> <text x="25" y="44" font-family="Quicksand" font-size="10" fill="#bbb">Passenger Flow</text>
+    <circle cx="15" cy="60" r="5" fill="#6a0dad"/> <text x="25" y="64" font-family="Quicksand" font-size="10" fill="#bbb">Driver Flow</text>
+    <circle cx="15" cy="80" r="5" fill="#ffae00"/> <text x="25" y="84" font-family="Quicksand" font-size="10" fill="#bbb">Internal API Hub</text>
+  </g>
 
-  <!-- Driver App -->
-  <rect x="50" y="350" width="220" height="120" rx="10" ry="10" fill="#16161a" stroke="#6a0dad" stroke-width="2"/>
-  <text x="160" y="380" font-family="Quicksand, sans-serif" font-size="18" fill="#e0e0e0" text-anchor="middle" font-weight="bold">🚛 Driver App</text>
-  <text x="160" y="405" font-family="Quicksand, sans-serif" font-size="12" fill="#888" text-anchor="middle">com.pickme.driver.byod</text>
-  <line x1="100" y1="415" x2="220" y2="415" stroke="#2d2d35" stroke-width="1"/>
-  <text x="160" y="435" font-family="Quicksand, sans-serif" font-size="11" fill="#bbb" text-anchor="middle">• Job Dispatching</text>
-  <text x="160" y="450" font-family="Quicksand, sans-serif" font-size="11" fill="#bbb" text-anchor="middle">• Driver Management</text>
+  <!-- ================= PASSENGER APP ================= -->
+  <g transform="translate(50, 120)">
+    <rect width="280" height="280" rx="12" ry="12" fill="#16161a" stroke="#1565C0" stroke-width="2"/>
+    <text x="140" y="30" font-family="Quicksand" font-size="20" fill="#e0e0e0" text-anchor="middle" font-weight="bold">📱 Passenger Client</text>
+    <text x="140" y="50" font-family="Quicksand" font-size="11" fill="#888" text-anchor="middle">com.pickme.passenger (v9.40.x)</text>
+    
+    <!-- Sub-Modules -->
+    <rect x="20" y="70" width="240" height="40" rx="5" fill="#0a0a0c" stroke="#2d2d35"/>
+    <text x="140" y="95" font-family="Quicksand" font-size="12" fill="#bbb" text-anchor="middle">Auth &amp; Profile Manager (GMS/SMS)</text>
+    
+    <rect x="20" y="120" width="240" height="40" rx="5" fill="#0a0a0c" stroke="#2d2d35"/>
+    <text x="140" y="145" font-family="Quicksand" font-size="12" fill="#bbb" text-anchor="middle">CyberSource Payment Gateway</text>
+    
+    <rect x="20" y="170" width="240" height="40" rx="5" fill="#0a0a0c" stroke="#2d2d35"/>
+    <text x="140" y="195" font-family="Quicksand" font-size="12" fill="#bbb" text-anchor="middle">GIS Engine (Google Maps SDK)</text>
+    
+    <rect x="20" y="220" width="240" height="40" rx="5" fill="#0a0a0c" stroke="#2d2d35"/>
+    <text x="140" y="245" font-family="Quicksand" font-size="12" fill="#bbb" text-anchor="middle">ML Kit Barcode Extractor</text>
+  </g>
 
-  <!-- Central Backend -->
-  <rect x="450" y="220" width="300" height="180" rx="10" ry="10" fill="#16161a" stroke="#ffae00" stroke-width="2" stroke-dasharray="5,5"/>
-  <text x="600" y="255" font-family="Quicksand, sans-serif" font-size="20" fill="#ffae00" text-anchor="middle" font-weight="bold">☁️ PickMe Cloud &amp; APIs</text>
-  <text x="600" y="280" font-family="Quicksand, sans-serif" font-size="12" fill="#888" text-anchor="middle">api.pickme.lk | driver-api-go.pickme.lk</text>
-  <line x1="500" y1="295" x2="700" y2="295" stroke="#2d2d35" stroke-width="1"/>
-  <text x="600" y="320" font-family="Quicksand, sans-serif" font-size="12" fill="#bbb" text-anchor="middle">Core Logic, Dispatching Engine,</text>
-  <text x="600" y="340" font-family="Quicksand, sans-serif" font-size="12" fill="#bbb" text-anchor="middle">and Real-time Communication Servers</text>
+  <!-- ================= DRIVER APP ================= -->
+  <g transform="translate(50, 450)">
+    <rect width="280" height="280" rx="12" ry="12" fill="#16161a" stroke="#6a0dad" stroke-width="2"/>
+    <text x="140" y="30" font-family="Quicksand" font-size="20" fill="#e0e0e0" text-anchor="middle" font-weight="bold">🚛 Driver BYOD Client</text>
+    <text x="140" y="50" font-family="Quicksand" font-size="11" fill="#888" text-anchor="middle">com.pickme.driver.byod (v37.3.x)</text>
+    
+    <!-- Sub-Modules -->
+    <rect x="20" y="70" width="240" height="40" rx="5" fill="#0a0a0c" stroke="#2d2d35"/>
+    <text x="140" y="95" font-family="Quicksand" font-size="12" fill="#bbb" text-anchor="middle">Persistent Location Engine (Background)</text>
+    
+    <rect x="20" y="120" width="240" height="40" rx="5" fill="#0a0a0c" stroke="#2d2d35"/>
+    <text x="140" y="145" font-family="Quicksand" font-size="12" fill="#bbb" text-anchor="middle">Dispatch Overlay (System Alert)</text>
+    
+    <rect x="20" y="170" width="240" height="40" rx="5" fill="#0a0a0c" stroke="#2d2d35"/>
+    <text x="140" y="195" font-family="Quicksand" font-size="12" fill="#bbb" text-anchor="middle">Real-time Chat (WebSockets)</text>
+    
+    <rect x="20" y="220" width="240" height="40" rx="5" fill="#0a0a0c" stroke="#2d2d35"/>
+    <text x="140" y="245" font-family="Quicksand" font-size="12" fill="#bbb" text-anchor="middle">Self-Registration Portal</text>
+  </g>
+
+  <!-- ================= BACKEND INFRASTRUCTURE ================= -->
+  <g transform="translate(450, 150)">
+    <rect width="500" height="500" rx="15" ry="15" fill="#16161a" stroke="#ffae00" stroke-width="2" stroke-dasharray="8,4"/>
+    <text x="250" y="40" font-family="Quicksand" font-size="24" fill="#ffae00" text-anchor="middle" font-weight="bold">☁️ PickMe Central API Ecosystem</text>
+    
+    <!-- API Hubs -->
+    <rect x="50" y="70" width="400" height="60" rx="8" fill="#0a0a0c" stroke="#ffae00" stroke-width="1"/>
+    <text x="250" y="95" font-family="Quicksand" font-size="16" fill="#e0e0e0" text-anchor="middle">api.pickme.lk (Core Passenger API)</text>
+    <text x="250" y="115" font-family="Quicksand" font-size="10" fill="#888" text-anchor="middle">Fare Calculation, Geo-Fencing, User Auth, History</text>
+
+    <rect x="50" y="150" width="400" height="60" rx="8" fill="#0a0a0c" stroke="#ffae00" stroke-width="1"/>
+    <text x="250" y="175" font-family="Quicksand" font-size="16" fill="#e0e0e0" text-anchor="middle">driver-api-go.pickme.lk (Dispatch Hub)</text>
+    <text x="250" y="195" font-family="Quicksand" font-size="10" fill="#888" text-anchor="middle">Job Allocation, Telemetry Ingestion, Status Sync</text>
+
+    <rect x="50" y="230" width="400" height="60" rx="8" fill="#0a0a0c" stroke="#ffae00" stroke-width="1"/>
+    <text x="250" y="255" font-family="Quicksand" font-size="16" fill="#e0e0e0" text-anchor="middle">driver-chat-server.pickme.lk (Comms)</text>
+    <text x="250" y="275" font-family="Quicksand" font-size="10" fill="#888" text-anchor="middle">Real-time Passenger-Driver Messaging Protocol</text>
+
+    <rect x="50" y="310" width="400" height="60" rx="8" fill="#0a0a0c" stroke="#ffae00" stroke-width="1"/>
+    <text x="250" y="335" font-family="Quicksand" font-size="16" fill="#e0e0e0" text-anchor="middle">delivery-driver-api.pickme.lk (Logistics)</text>
+    <text x="250" y="355" font-family="Quicksand" font-size="10" fill="#888" text-anchor="middle">Food &amp; Flash Delivery Orchestration Engine</text>
+
+    <!-- Internal Core -->
+    <path d="M 250 380 L 250 420" stroke="#ffae00" stroke-width="2" marker-end="url(#arrowGold)"/>
+    <rect x="100" y="420" width="300" height="60" rx="8" fill="#2d2d35" stroke="#ffae00" stroke-width="1"/>
+    <text x="250" y="445" font-family="Quicksand" font-size="18" fill="#fff" text-anchor="middle" font-weight="bold">Core Database &amp; ML Layer</text>
+    <text x="250" y="465" font-family="Quicksand" font-size="10" fill="#bbb" text-anchor="middle">Predictive ETA, Dynamic Pricing Models, User Integrity Records</text>
+  </g>
+
+  <!-- ================= EXTERNAL TIER ================= -->
+  <g transform="translate(450, 680)">
+    <rect width="500" height="100" rx="10" ry="10" fill="#101014" stroke="#444" stroke-width="1"/>
+    <text x="250" y="30" font-family="Quicksand" font-size="18" fill="#e0e0e0" text-anchor="middle" font-weight="bold">External Service Integration Tier</text>
+    <text x="250" y="55" font-family="Quicksand" font-size="12" fill="#888" text-anchor="middle">CyberSource (Payment processing) | Google Maps SDK (GIS &amp; Routing)</text>
+    <text x="250" y="75" font-family="Quicksand" font-size="12" fill="#888" text-anchor="middle">Firebase FCM (Push Notifications) | Google ML Kit (Feature Extraction)</text>
+  </g>
 
   <!-- Connections -->
-  <path d="M 270 210 L 450 250" stroke="#1565C0" stroke-width="2" fill="none" marker-end="url(#arrowBlue)"/>
-  <path d="M 270 410 L 450 370" stroke="#6a0dad" stroke-width="2" fill="none" marker-end="url(#arrowPurple)"/>
+  <path d="M 330 200 Q 390 200 450 220" stroke="#1565C0" stroke-width="2" fill="none" marker-end="url(#arrowBlue)"/>
+  <path d="M 330 600 Q 390 600 450 580" stroke="#6a0dad" stroke-width="2" fill="none" marker-end="url(#arrowPurple)"/>
+  <path d="M 700 650 L 700 680" stroke="#444" stroke-width="2" stroke-dasharray="5,5" fill="none"/>
 
-  <!-- External Systems -->
-  <rect x="450" y="480" width="300" height="80" rx="8" ry="8" fill="#101014" stroke="#444" stroke-width="1"/>
-  <text x="600" y="505" font-family="Quicksand, sans-serif" font-size="14" fill="#e0e0e0" text-anchor="middle" font-weight="bold">External Systems</text>
-  <text x="600" y="525" font-family="Quicksand, sans-serif" font-size="11" fill="#888" text-anchor="middle">CyberSource (Payments), Google Maps (GIS),</text>
-  <text x="600" y="540" font-family="Quicksand, sans-serif" font-size="11" fill="#888" text-anchor="middle">Firebase (FCM), ML Kit (Barcodes)</text>
-  
-  <path d="M 600 400 L 600 480" stroke="#444" stroke-width="2" stroke-dasharray="3,3" fill="none"/>
-
-  <!-- Arrows -->
+  <!-- Markers -->
   <defs>
-    <marker id="arrowBlue" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+    <marker id="arrowBlue" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
       <path d="M0,0 L0,6 L9,3 z" fill="#1565C0" />
     </marker>
-    <marker id="arrowPurple" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+    <marker id="arrowPurple" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
       <path d="M0,0 L0,6 L9,3 z" fill="#6a0dad" />
+    </marker>
+    <marker id="arrowGold" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#ffae00" />
     </marker>
   </defs>
 
-  <!-- Footer -->
-  <text x="400" y="585" font-family="Quicksand, sans-serif" font-size="10" fill="#444" text-anchor="middle">Security &amp; Integrity Record • Lead Prototyper: Nimuthu Ganegoda • AI Oversight: Mommy</text>
+  <!-- Footer Footer -->
+  <text x="500" y="795" font-family="Quicksand" font-size="10" fill="#444" text-anchor="middle">Proprietary Research &amp; Architectural Integrity Log • Created by Gemini CLI for Nimuthu Ganegoda • Access Restricted</text>
 </svg>
