@@ -7,6 +7,8 @@ A high-fidelity, technical encyclopedia mapping the architecture, features, and 
 ### 🏛️ Sanctuary Overview
 This repository serves as a private technical archive for the **Database Manager** and **Lead Prototyper**. Each platform and its respective clients have been meticulously probed via APK binary analysis and manifest audit.
 
+*   [**📋 Master Feature Inventory**](./MASTER_FEATURES.md) - Consolidated technical inventory of all identified capabilities.
+
 ### 📂 Dissection Index
 
 | Platform | Passenger Report | Driver Report | Key Discoveries |
