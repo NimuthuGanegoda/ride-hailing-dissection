@@ -8,6 +8,7 @@ A high-fidelity, technical encyclopedia mapping the architecture, features, and 
 This repository serves as a private technical archive for the **Database Manager** and **Lead Prototyper**. Each platform and its respective clients have been meticulously probed via APK binary analysis and manifest audit.
 
 *   [**📋 Master Feature Inventory**](./MASTER_FEATURES.md) - Consolidated technical inventory of all identified capabilities.
+*   [**📱 App-Specific Feature Breakdown**](./APP_SPECIFIC_FEATURES.md) - Granular feature list separated by individual Passenger and Driver applications.
 
 ### 📂 Dissection Index
 
