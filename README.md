@@ -5,23 +5,23 @@ A high-fidelity, technical encyclopedia mapping the architecture, features, and 
 ---
 
 ### 🏛️ Sanctuary Overview
-This repository serves as a private technical archive for the **Database Manager** and **Lead Prototyper**. Each platform has been meticulously probed via APK binary analysis, manifest audit, and string extraction to reveal its inner workings.
+This repository serves as a private technical archive for the **Database Manager** and **Lead Prototyper**. Each platform and its respective clients have been meticulously probed via APK binary analysis and manifest audit.
 
 ### 📂 Dissection Index
 
-| Platform | Domain | Technical Report | Key Discoveries |
+| Platform | Passenger Report | Driver Report | Key Discoveries |
 | :--- | :--- | :--- | :--- |
-| **PickMe** | Sri Lanka | [Report](./pickme/driver/README.md) | CyberSource, GMS GIS, ML Kit Barcodes |
-| **Uber** | Global | [Report](./uber/driver/README.md) | Braintree/PayPal, Modular UI, Dashboard Auto |
-| **Bolt** | Europe | [Report](./bolt/README.md) | Mapbox SDK, Veriff Biometrics, Mixpanel Analytics |
-| **Grab** | SE Asia | [Report](./grab/README.md) | Karta Local GIS, Financial Super-App Tier, Feature Patching |
+| **PickMe** | [Passenger](./pickme/passenger/README.md) | [Driver](./pickme/driver/README.md) | CyberSource, GMS GIS, ML Kit Barcodes |
+| **Uber** | [Passenger](./uber/passenger/README.md) | [Driver](./uber/driver/README.md) | Braintree/PayPal, Modular UI, Dashboard Auto |
+| **Bolt** | [Passenger](./bolt/passenger/README.md) | [Driver](./bolt/driver/README.md) | Mapbox SDK, Veriff Biometrics, Mixpanel |
+| **Grab** | [Passenger](./grab/passenger/README.md) | [Driver](./grab/driver/README.md) | Karta Local GIS, Financial Hub, Feature Patching |
 
 ---
 
 ### 🔍 Research Methodology
 1.  **Binary Probing:** Exhaustive string extraction to identify API endpoints and feature flags.
 2.  **Manifest Audit:** Full review of Android permissions and service declarations.
-3.  **Architectural Mapping:** Visual and technical synthesis of module dependencies and external integrations.
+3.  **Architectural Mapping:** Visual and technical synthesis of module dependencies.
 
 ### 🖼️ Visual Sanctuary
 *   [High-Fidelity Architectural Map](./pickme_architecture.svg)
