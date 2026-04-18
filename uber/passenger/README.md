@@ -23,6 +23,8 @@ An exhaustive architectural audit of the **Uber Passenger** application, detaili
 *   **Logic:** Tightly integrated modular UI for seamless switching between ride-hailing and logistics.
 
 #### 3. Intelligence & Comms
+*   **Waymo Integration (Autonomous):** Direct integration with Waymo for booking autonomous vehicle rides in supported geo-fenced regions.
+*   **RideCheck Safety:** Proactive crash and anomaly detection using high-frequency GPS and accelerometer telemetry.
 *   **GIS Engine:** Connects to `cn-geo1.uber.com` for high-precision geo-fencing and routing.
 *   **Analytics:** Extensive use of `singular.net` for S2S (Server-to-Server) attribution and user behavioral tracking.
 *   **Media Support:** Includes ID3 tag extraction and high-quality streaming support (`aomedia.org`).
@@ -31,7 +33,9 @@ An exhaustive architectural audit of the **Uber Passenger** application, detaili
 
 ### 🛠️ Specific App Features
 *   **Global Payment Fabric:** Multi-gateway support including Braintree, PayPal, and Venmo, with localized currency handling.
+*   **Waymo (Autonomous):** Native support for booking self-driving vehicles through the Uber platform.
 *   **Uber Eats Integration:** Modular UI elements (`gifting_eats_feature_launcher`) allowing seamless transition to food delivery.
+*   **RideCheck:** Automated safety monitoring that detects unexpected stops or potential collisions during a trip.
 *   **Dynamic Pricing Engine:** Real-time fare recalculation based on demand density and geo-fencing (`PricingApi`).
 *   **High-Fidelity Media:** ID3 tag extraction and advanced streaming for in-app media or ad experiences.
 *   **S2S Analytics:** Server-to-server attribution tracking via Singular.net.

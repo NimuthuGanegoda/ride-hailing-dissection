@@ -32,6 +32,8 @@ The driver client is engineered for high-frequency telemetry and absolute device
 *   **Alerting:** Leverages `SCHEDULE_EXACT_ALARM` to bypass OS power management for critical job notifications.
 
 #### 3. Dynamic Feature Management
+*   **Uber Pro Card:** Integrated financial services providing instant earnings access and business expense management.
+*   **RideCheck (Safety):** Continuous monitoring of trip progress to detect anomalies and provide assistance.
 *   **System:** Implements a sophisticated `DiskFeatureFlag` system (`ele_disk_feature_flag_demo`) for remote configuration and A/B testing of driver features.
 *   **Monitoring:** Dedicated `FeatureMonitorCategory` for real-time tracking of app performance and user interactions.
 
@@ -39,7 +41,9 @@ The driver client is engineered for high-frequency telemetry and absolute device
 
 ### 🛠️ Specific App Features
 *   **Industrial Telemetry Stream:** High-frequency, continuous background location tracking for precise dispatching.
+*   **Uber Pro Card Integration:** Native financial dashboard for instant payouts and programmatic incentive tracking.
 *   **Modular Verification (BarcodeScanner):** Uses a separate, dynamically loaded APK specifically for high-speed logistical scanning.
+*   **RideCheck:** Safety telemetry monitoring for both driver and passenger security.
 *   **Dashboard Projection:** Android Auto templates (`androidx.car.app`) allowing the app to project directly onto the vehicle's head unit.
 *   **Screen Capture Detection:** Security measures to prevent unauthorized recording of driver accounts or passenger details.
 *   **Remote Feature Flagging:** `DiskFeatureFlag` system for remote A/B testing and on-the-fly capability toggling.

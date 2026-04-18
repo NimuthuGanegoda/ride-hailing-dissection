@@ -41,6 +41,15 @@ The application requests extensive system access to maintain its real-time dispa
 
 ---
 
+### 🚀 Unique Platform Features
+*   **PickMe Flash (Logistics):** Dedicated on-demand courier and package delivery module integrated into the core dispatch engine.
+*   **Heavy-Duty Truck Dispatch:** Specialized logistics tier supporting vehicles up to 1500kg (10ft trucks) for large-scale goods transport.
+*   **JumJum (Sub-brand) Integration:** Seamless transition to the JumJum budget ecosystem with integrated wallet support.
+*   **Event Reservations:** Specialized module for booking and managing transportation for events, featuring "My Events" synchronization.
+*   **CyberSource Payment Fabric:** Deep integration with CyberSource for 3D Secure, tokenized credit/debit card processing.
+
+---
+
 ### 🌐 Discovered API Ecosystem
 The binary contains references to the following core service points:
 *   `https://api.pickme.lk` - Primary Passenger Gateway

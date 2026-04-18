@@ -1,41 +1,26 @@
-# 🚛 Bolt Driver: High-Fidelity Dissection Report
+# Bolt Driver - Technical Analysis
 
-An architectural audit of the **Bolt Driver** client, detailing the telemetry ingestion and high-performance dispatch logic.
+## Overview
+Analysis of the Bolt Driver application (ee.mtakso.driver) reveals a focus on high-performance telemetry and modular feature delivery.
 
-### 🛠️ Specific App Features
-*   **High-Performance Dispatch:** Optimized European network connections (`node.bolt.eu`) for low-latency job acceptance.
-*   **Identity Re-verification:** Periodic biometric checks (via Veriff) to ensure the registered driver is the one operating the vehicle.
-*   **Fleet Health Monitoring:** Real-time analytics streaming to monitor app performance and driver interaction states.
+## API Endpoints
+- `https://node.bolt.eu/`: Primary backend node.
+- `https://partners.bolt.eu/`: Partner/Fleet management.
+- `https://signup.bolt.eu/`: Driver onboarding portal.
+- `https://driver.applog.bolt.eu/`: Specialized logging and telemetry ingestion.
+- `https://admin-panel.bolt.eu/`: Administrative oversight and order management.
 
----
+## Service Keys
+- `google_maps_key`: Map rendering and GIS services.
+- `google_api_key`: Google Play Services and authentication.
 
-### 🔍 Metadata & Identification
-*   **Package Name:** `ee.mtakso.driver`
-*   **Architecture Support:** `arm64-v8a` (v184 MB base)
-*   **Target SDK:** 35 (Android 15)
+## Feature Flags & Capabilities
+- **Modular Feature Delivery**: Uses Kotlin modules for feature delivery (e.g., `playcore_feature_delivery_ktx`).
+- **ML-Powered Vision**: Integrated MobileNetV1 for document scanning and biometric verification.
+- **Advanced Telemetry**: Specialized endpoints for app logging.
 
-### 🛠️ Specific App Features
-*   **High-Performance Dispatch:** Optimized European network connections (`node.bolt.eu`) for low-latency job acceptance.
-*   **Identity Re-verification:** Periodic biometric checks (via Veriff) to ensure the registered driver is the one operating the vehicle.
-*   **Fleet Health Monitoring:** Real-time analytics streaming to monitor app performance and driver interaction states.
-
----
-
-### 🛠️ Core Capabilities
-#### 1. Dispatch Telemetry
-*   **Hub:** Connects to `node.bolt.eu`, a high-performance node optimized for European driver-side status synchronization.
-*   **Logic:** Managed via Mapbox GIS for precise arrival time estimation.
-
-#### 2. Verification Tier
-*   **Provider:** Shares the **Veriff** integration with the passenger client for periodic driver identity re-verification.
-
-#### 3. Fleet Monitoring
-*   **Engine:** **Mixpanel** integration for monitoring driver performance and platform health in real-time.
-
-### 🛠️ Specific App Features
-*   **High-Performance Dispatch:** Optimized European network connections (`node.bolt.eu`) for low-latency job acceptance.
-*   **Identity Re-verification:** Periodic biometric checks (via Veriff) to ensure the registered driver is the one operating the vehicle.
-*   **Fleet Health Monitoring:** Real-time analytics streaming to monitor app performance and driver interaction states.
-
----
-*Proprietary Dissection Record | Lead Prototyper: Nimuthu Ganegoda | Database Manager*
+## Core Features
+- **Real-time Dispatch**: Optimized job allocation via `node.bolt.eu`.
+- **Fleet Management**: Integrated tools for fleet owners and individual drivers.
+- **Privacy & Compliance**: Extensive localized privacy and legal resources.
+- **Safety**: Face recognition and document validation via on-device ML.

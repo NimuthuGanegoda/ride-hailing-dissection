@@ -39,6 +39,15 @@ The driver client is designed for total persistence and device control to ensure
 
 ---
 
+### 🚀 Unique Platform Features
+*   **PickMe Flash (Logistics):** Advanced delivery orchestration including "Flash XXL" and heavy-duty logistics support.
+*   **Truck Dispatch System:** Dedicated driver interface for managing 1500kg/10ft truck jobs with specialized routing requirements.
+*   **JumJum Driver Ecosystem:** Dual-mode support for the JumJum sub-brand, including specialized JumJum Wallet and anti-fraud hardware binding.
+*   **Persistent Dispatch Overlay:** System-level alert windows (`SYSTEM_ALERT_WINDOW`) that force job requests to appear over any other app.
+*   **Hardware Binding:** Cryptographic binding of driver accounts to physical device IDs (`READ_PRIVILEGED_PHONE_STATE`) to prevent account sharing/fraud.
+
+---
+
 ### 🛠️ Specific App Features
 *   **Persistent Dispatch Overlay:** System-alert windows that force job requests to appear over any other app the driver is using.
 *   **Self-Registration Portal:** In-app onboarding system for new driver verification and document submission.
