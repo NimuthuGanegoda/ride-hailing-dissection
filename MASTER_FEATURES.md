@@ -6,43 +6,58 @@ A consolidated technical inventory of all features and capabilities identified d
 
 ### 🚗 Core Mobility & Dispatch
 *   **On-Demand Ride Booking:** Real-time request-response cycle between passenger and driver nodes.
+    *   [Bolt Passenger Dispatch](bolt/passenger/features/dispatch.md) | [Bolt Driver Dispatch](bolt/driver/features/dispatch.md)
+    *   [Grab Passenger Dispatch](grab/passenger/features/dispatch.md) | [Grab Driver Logistics](grab/driver/features/logistics.md)
+    *   [Uber Passenger Mobility](uber/passenger/features/mobility.md) | [Uber Driver Dispatch](uber/driver/features/dispatch.md)
+    *   [PickMe Passenger Dispatch](pickme/passenger/features/dispatch.md) | [PickMe Driver Dispatch](pickme/driver/features/dispatch.md)
 *   **Autonomous Fleet Integration:** Seamless integration of self-driving vehicles (e.g., Waymo) into the on-demand dispatch pool.
-*   **Multi-Modal Transport:** support for varied vehicle classes (Cars, Tuk-Tuks, Scooters, Luxury, Pool/Share) and budget-oriented sub-brands (JumJum).
-*   **Intelligent Fare Estimation:** Dynamic calculation of costs based on distance, estimated time, and route complexity.
-*   **Surge & Dynamic Pricing:** Real-time adjustment of pricing algorithms based on local supply and demand density.
-*   **Event Reservations:** Specialized in-app module for scheduling and managing transport for organized events (PickMe).
-*   **GIS & Route Optimization:** High-fidelity mapping integration (Google Maps SDK / Mapbox SDK) for real-time navigation and arrival estimation.
-*   **Proprietary GIS (GrabMaps):** Custom mapping engine optimized for regional road networks with hyper-local POI contribution.
+    *   [Uber Autonomous Features](uber/passenger/features/mobility.md)
+*   **Multi-Modal Transport:** Support for varied vehicle classes and budget-oriented sub-brands (JumJum).
+*   **GIS & Route Optimization:** High-fidelity mapping integration for real-time navigation and arrival estimation.
+    *   [Bolt Mapping](bolt/passenger/features/mapping.md)
+    *   [Grab Mapping](grab/passenger/features/mapping.md) | [Grab Driver Mapping](grab/driver/features/mapping.md)
+    *   [Uber Mapping](uber/passenger/features/mapping.md)
+    *   [PickMe Mapping](pickme/passenger/features/mapping.md)
+*   **Proprietary GIS (GrabMaps):** Custom mapping engine optimized for regional road networks.
+    *   [GrabMaps Analysis](grab/passenger/features/mapping.md)
 
 ### 🚛 Driver Operational Dominance
 *   **Persistent Telemetry Ingestion:** High-frequency ingestion of driver coordinates via background and foreground location services.
-*   **Programmatic Incentive Management:** Algorithmic generation and distribution of driver incentives, quests, and tiered rewards (e.g., Uber Pro).
-*   **Priority Dispatch Engine:** Algorithmic job allocation based on driver proximity, status, and performance metrics.
-*   **In-App Earnings Dashboard:** Real-time tracking of daily/weekly earnings, bonuses, and incentives.
-*   **System Alert Overlays:** Use of system-level windows to ensure job requests are visible over other applications (Driver Dominance).
-*   **Offline Operation Support:** Graceful handling of status synchronization during network degradation.
-*   **Fatigue & Safety AI:** Real-time monitoring of driving patterns to manage fatigue and safety.
+    *   [Bolt Driver Telemetry](bolt/driver/features/telemetry.md)
+    *   [Grab Driver Telemetry](grab/driver/features/telemetry.md)
+    *   [Uber Driver Telemetry](uber/driver/features/telemetry.md)
+    *   [PickMe Driver Telemetry](pickme/driver/features/telemetry.md)
+*   **System Alert Overlays:** Use of system-level windows to ensure job requests are visible over other applications.
+    *   [Uber Driver Overlays](uber/driver/features/dispatch.md)
+    *   [PickMe Driver Overlays](pickme/driver/features/dispatch.md)
 
 ### 🛡️ Safety, Trust & Integrity
-*   **SOS / Emergency Trigger:** Dedicated, high-priority communication paths for immediate assistance during incidents.
-*   **Automated Identity Verification:** Use of biometric and document scanning (Veriff / Uber UAM) during onboarding and lifecycle checks.
-*   **Trip Sharing (Guardians):** Real-time sharing of trip status and vehicle location with trusted contacts.
-*   **Security Protections:** Anti-fraud measures including screen-capture detection and overlay blocking.
+*   **Automated Identity Verification:** Use of biometric and document scanning during onboarding and lifecycle checks.
+    *   [Bolt Identity](bolt/passenger/features/identity.md) | [Bolt Driver Identity](bolt/driver/features/identity.md)
+    *   [Grab Identity](grab/passenger/features/safety.md) | [Grab Driver Identity](grab/driver/features/safety.md)
+    *   [PickMe Driver Identity](pickme/driver/features/identity.md)
 *   **Audio Transcription (Safety):** Encrypted trip audio recording for dispute resolution and enhanced safety monitoring.
+    *   [Grab Safety](grab/passenger/features/safety.md) | [Grab Driver Safety](grab/driver/features/safety.md)
 
 ### 💳 Financial & Super-App Ecosystem
-*   **Integrated Multi-Gateway Payments:** Support for vaulted credit/debit card processing via CyberSource, Braintree, and PayPal.
-*   **Loyalty & Reward Engines:** Comprehensive systems for managing promo codes, referral bonuses, and tier-based loyalty points.
-*   **In-App Wallets:** Digital currency management for seamless, cashless transactions across all ecosystem services.
-*   **Logistical Integration:** Unified support for Food Delivery (Uber Eats / GrabFood), Package Logistics (PickMe Flash), and Heavy-Duty Truck Dispatch (PickMe).
-*   **Bill Splitting:** Advanced group ordering with the ability to split costs equally or by line item.
-*   **Digital Banking & Micro-credit:** Integrated banking services (GXS) and "PayLater" (BNPL) micro-credit lines.
+*   **Integrated Multi-Gateway Payments:** Support for vaulted credit/debit card processing.
+    *   [Uber Payments](uber/passenger/features/payments.md)
+    *   [PickMe Payments](pickme/passenger/features/payments.md)
+*   **In-App Wallets & Digital Banking:** Digital currency management and integrated banking services (GXS).
+    *   [Grab Financials](grab/passenger/features/financials.md) | [Grab Driver Financials](grab/driver/features/financials.md)
+    *   [PickMe Passenger Financials](pickme/passenger/features/payments.md)
+*   **Logistical Integration:** Unified support for Food Delivery and Package Logistics.
+    *   [Grab Logistics](grab/passenger/features/logistics.md) | [Grab Driver Logistics](grab/driver/features/logistics.md)
+    *   [Uber Logistics](uber/passenger/features/logistics.md)
+    *   [PickMe Logistics](pickme/passenger/features/logistics.md) | [PickMe Driver Logistics](pickme/driver/features/logistics.md)
 
 ### 🧩 Advanced Architectural Features
-*   **Modular Feature Delivery:** Use of PlayCore / Feature Patching to load specific capabilities (like carsharing) on-demand.
-*   **ML-Powered Vision:** Integration of ML Kit for high-speed barcode and QR code extraction for delivery and profile verification.
-*   **Global Localization:** Dynamic support for varied languages (Sinhala, Tamil, Arabic, etc.) and regional GIS data (Karta).
-*   **Remote Performance Monitoring:** Real-time exception management and analytics (Mixpanel / MonitorSDK / Firebase).
+*   **Modular Feature Delivery:** Use of PlayCore / Feature Patching to load specific capabilities on-demand.
+    *   [Bolt Architecture](bolt/passenger/features/architecture.md) | [Bolt Driver Architecture](bolt/driver/features/architecture.md)
+    *   [Grab Super-App Architecture](grab/passenger/features/architecture.md)
+    *   [Uber Feature Flags](uber/driver/features/architecture.md)
+*   **ML-Powered Vision:** Integration of ML Kit for high-speed barcode and QR code extraction.
+    *   [PickMe ML Vision](pickme/passenger/features/architecture.md)
 
 ---
-*Synthesized Industry Record | Lead Prototyper: Nimuthu Ganegoda | Database Manager*
+*Synthesized Industry Record | Lead Developer: Nimuthu Ganegoda | Architectural Prototyper*
